@@ -1,0 +1,145 @@
+\documentclass[a4, 12pt]{article}
+
+\usepackage[margin=2.54cm]{geometry}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{nccmath}
+
+\usepackage{titlesec} %--> Me saca el espacio muerto
+\titlespacing*{\subsection}{0pt}{0.5em}{0.3em}
+\titlespacing*{\section}{0pt}{0.5em}{0.3em}
+
+\title{Hoja de fórmulas}
+\author{}
+\date{}
+
+\begin{document}
+
+\begin{multicols}{2}
+    \section*{Relatividad especial}
+
+    $
+    \begin{aligned}
+        &E = \sqrt{m^{2} + |\vec{p}|^2} \quad
+        \vec{p} = E \frac{\vec{u}}{c^2} \\
+        &(p_{i}^{\mu})^2 = (p_{f}^{\mu})^2 \quad
+        E = m\gamma \quad \quad
+        \tau = T/\gamma \\
+        &\begin{cases}
+            A^{0'} = \gamma (A^0 - vA^x) \\
+            A^{x'} = \gamma (A^x - vA^0) \\
+            A^{y'} = A^y \; ; \; A^{z'} = A^z
+        \end{cases}
+    \end{aligned}
+    $
+    
+    \section*{Isospin}
+    Teniendo en cuenta: $\hat{I_1}, \hat{I_2}, \hat{I_3} \in SU(2)$
+
+    $
+    \begin{aligned}
+        &[\hat{I}_i, \hat{I}_j] = i \epsilon_{ijk}\hat{I}_k \quad
+        ; \hat{I}_{\pm} = \hat{I}_1 \pm i\hat{I}_2 \\
+        &\hat{I}^2 = \hat{I}_1^2 + \hat{I}_2^2 + \hat{I}_3^2 \\
+        &\mu_{jm} = \mu_j \\
+        &\langle j', m'|\hat{U}|j,m \rangle = \delta_{jj'} \delta_{mm'}M_j \\
+        &\langle j, m|\hat{U}|j,m \rangle = \langle j, m'|\hat{U}|j,m' \rangle \\
+    \end{aligned}$
+
+    \noindent Postulado: $[\hat{H_F}, \hat{I_j}] = 0$
+
+    \section*{Modelo del quark}
+    $
+    \begin{aligned}
+        &\bigg[\frac{\lambda_1}{2}, \frac{\lambda_2}{2}\bigg] = i \frac{\lambda_3}{2} \\
+        &\bigg[\frac{\lambda_3}{2}, \frac{\lambda_5}{2}\bigg] = \frac{i}{4}\big(\lambda_3 + \sqrt{3}\lambda_8\big) \\
+        &\bigg[\frac{\lambda_6}{2}, \frac{\lambda_7}{2}\bigg] = \frac{i}{4}\big(-\lambda_3 + \sqrt{3}\lambda_8\big) \\
+        &\hat{I}_{\pm} = \frac{\lambda_1 \pm i\lambda_2}{2} \quad
+        \hat{V}_{\pm} = \frac{\lambda_4 \pm i\lambda_5}{2} \\
+        &\hat{U}_{\pm} = \frac{\lambda_6 \pm i\lambda_7}{2} \quad
+        Q = I_3 + \frac{1}{2}Y
+    \end{aligned}
+    $
+
+    \noindent El \textbf{sabor} debe ser un singlete de $SU(3)_{color}$.
+
+    \noindent Para el \textbf{antifundamental} todas invierten y agregan signo.
+
+    \subsection*{Momento magnético}
+    $
+    \begin{aligned}
+        &\hat{\vec{\mu}} = \frac{q}{2m} \hat{\vec{\sigma}} \;(\text{Sigma es para el spin})\\
+        &\hat{\mu}_{z,i} = Q_i \frac{e}{2m_i}\hat{\sigma_3} \rightarrow i = u,d,s
+    \end{aligned}
+    $
+
+    \section*{Dirac y KG}
+    $
+    \begin{aligned}
+        &(\partial^{\mu} \partial_{\mu} + m^2)\phi = 0 \quad
+        (i \gamma^\mu \partial_{\mu} - m)\psi = 0 \\
+        &(\vec{k . \vec{\sigma}})^{-1} = \frac{k . \vec{\sigma}}{|\vec{k}|^2} \\
+        &\{\gamma^{\mu}, \gamma^{\nu}\} = 2\eta^{\mu \nu} \quad
+        (\gamma^{\mu})^\dagger = \gamma^{0}\gamma^{\mu}\gamma^{0} \\
+        &(\gamma^{0})^\dagger = \gamma^0 \quad
+        (\gamma^{i})^\dagger = -\gamma^i
+    \end{aligned}
+    $
+
+    \subsection*{Transformaciones}
+    $
+    \begin{aligned}
+        &S(\omega) = e^{-\frac{i}{2} \omega_{\alpha \beta} \Sigma^{\alpha \beta}} \rightarrow
+        \Sigma^{\alpha \beta} = \frac{1}{4} \big[\gamma^{\alpha}, \gamma^{\beta} \big] \\
+    \end{aligned}
+    $
+
+    \subsection*{Helicidad}
+    $
+    \begin{aligned}
+        &h = \vec{s} \cdot \hat{\vec{p}} \;\;\text{"="} \frac{1}{2} \frac{\vec{\Sigma} \cdot \vec{p}}{|\vec{p}|} \quad
+        [H, h] = 0
+    \end{aligned}
+    $
+
+    \subsection*{Quiralidad}
+    $
+    \begin{aligned}
+        &\gamma^5 = i\gamma^0 \gamma^1 \gamma^2 \gamma^3 \\
+        &[\gamma^5, S(\Lambda)] = 0 ;\quad
+        [H, \gamma^5] \neq 0 \\
+        &\gamma^5 \approx 2h \\
+        &(\gamma^5)^\dagger = \gamma^5 ;\quad
+        (\gamma^5)^2 = 1 \\
+        &\{\gamma^5, \gamma^\mu\} = 0 \\
+        &\hat{P}_R = \frac{1}{2}(1 + \gamma^5) ;\quad
+        \hat{P}_L = \frac{1}{2}(1 - \gamma^5) \\
+    \end{aligned}
+    $
+
+    \section*{Lagrange}
+    $
+    \begin{aligned}
+        &\partial_{\mu}\bigg(\frac{\partial L}{\partial(\partial_\mu\phi)}\bigg) - \frac{\partial L}{\partial \phi} = 0 \\
+        &\frac{\partial (\partial_\mu \phi)}{\partial (\partial_\nu \phi)} = \delta^{\nu}_\mu \quad
+        \frac{\partial (\partial^\mu \phi)}{\partial (\partial_\nu \phi)} = \eta^{\mu \nu} \quad
+        \frac{\partial (\partial_\mu A_{\nu})}{\partial (\partial_\alpha A_\beta)} = \delta^{\alpha}_\mu \delta^\beta_\nu \\
+    \end{aligned}
+    $
+
+    \subsection*{Noether}
+    Supongamos $L = L(\phi_1, ..., \phi_N, \partial_\mu \phi_1, ..., \partial_\mu \phi_N)$, aplicando transformación infinitesimal:
+
+    \begin{equation*}
+        \begin{split}
+            &L' = L + \partial_\mu K^\mu \\ 
+            &\Rightarrow J^\mu = \sum_i \frac{\partial L}{\partial(\partial_\mu\phi)} \Delta \phi_i + \partial_\mu K^\mu \\
+            &\partial_\mu J^\mu = 0 \quad \text{(Bajo ecs de mto)}
+        \end{split}
+    \end{equation*}
+
+\end{multicols}
+
+
+
+\end{document}

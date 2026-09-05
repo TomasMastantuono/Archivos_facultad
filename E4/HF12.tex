@@ -1,0 +1,193 @@
+\documentclass[a4paper, 12pt]{article}
+
+% ── Paquetes ──────────────────────────────────────────────────────────────────
+\usepackage[margin=2.54cm]{geometry}
+\usepackage{multicol}
+\usepackage{amsmath, amssymb}
+\setlength{\marginparwidth}{2cm}
+\usepackage{todonotes}   % para las notas pendientes (\todo{...})
+\usepackage[fleqn]{amsmath}
+
+% ── Metadatos ─────────────────────────────────────────────────────────────────
+\title{Hoja de fórmulas}
+\author{}
+\date{}
+
+% ══════════════════════════════════════════════════════════════════════════════
+\begin{document}
+\maketitle
+
+\begin{multicols}{2}
+
+% ── Relatividad especial ──────────────────────────────────────────────────────
+\section*{Relatividad especial}
+
+\begin{align*}
+    E          &= \sqrt{m^{2} + |\vec{p}|^{2}}                         \\
+    P_{i}^{2}  &= P_{f}^{2}
+        \quad \text{(Invariantes de Lorentz)}                           \\
+    \vec{p}    &= E\,\frac{\vec{u}}{c^{2}}
+\end{align*}
+
+\[
+\begin{cases}
+    A^{0'} = \gamma(A^{0} - v A^{x}) \\
+    A^{x'} = \gamma(A^{x} - v A^{0}) \\
+    A^{y'} = A^{y} \;;\; A^{z'} = A^{z}
+\end{cases}
+\]
+
+% ── Isospin ───────────────────────────────────────────────────────────────────
+\section*{Isospin}
+
+$\hat{I}_{1},\, \hat{I}_{2},\, \hat{I}_{3} \in SU(2)$
+
+\begin{align*}
+    [\hat{I}_{i},\, \hat{I}_{j}]
+        &= i\,\epsilon_{ijk}\,\hat{I}_{k}                              \\
+    \hat{I}^{2}
+        &= \hat{I}_{1}^{2} + \hat{I}_{2}^{2} + \hat{I}_{3}^{2}       \\
+    \hat{I}_{\pm}
+        &= \hat{I}_{1} \pm i\,\hat{I}_{2}                             \\
+    \mu_{jm}
+        &= \mu_{j}                                                     \\
+    \langle j', m'|\hat{U}|j, m\rangle
+        &= \delta_{jj'}\,\delta_{mm'}\,M_{j}                          \\
+    \langle j, m|\hat{U}|j, m\rangle
+        &= \langle j, m'|\hat{U}|j, m'\rangle
+\end{align*}
+
+Postulado:
+\begin{equation*}
+    [\hat{H}_{F},\, \hat{I}_{j}] = 0
+\end{equation*}
+
+% ── Modelo del quark ──────────────────────────────────────────────────────────
+\section*{Modelo del quark}
+
+Se utiliza $SU(3)$. \textbf{Matrices de Gell-Mann:}
+\todo[inline]{Agregar las matrices de Gell-Mann (Clase 6)}
+
+Algunas relaciones:
+\begin{align*}
+    \left[\tfrac{\lambda_{1}}{2},\, \tfrac{\lambda_{2}}{2}\right]
+        &= i\,\tfrac{\lambda_{3}}{2}                                   \\
+    \left[\tfrac{\lambda_{3}}{2},\, \tfrac{\lambda_{5}}{2}\right]
+        &= \tfrac{i}{4}\!\left(\lambda_{3} + \sqrt{3}\,\lambda_{8}\right) \\
+    \left[\tfrac{\lambda_{6}}{2},\, \tfrac{\lambda_{7}}{2}\right]
+        &= \tfrac{i}{4}\!\left(-\lambda_{3} + \sqrt{3}\,\lambda_{8}\right) \\
+    \hat{I}_{\pm}
+        &= \frac{\lambda_{1} \pm i\lambda_{2}}{2}                     \\
+    \hat{V}_{\pm}
+        &= \frac{\lambda_{4} \pm i\lambda_{5}}{2}                     \\
+    \hat{U}_{\pm}
+        &= \frac{\lambda_{6} \pm i\lambda_{7}}{2}                     \\
+    Q   &= I_{3} + \tfrac{1}{2}\,Y
+\end{align*}
+
+El sabor debe ser un singlete de $SU(3)_{\text{color}}$.
+
+\subsection*{Antifundamental}
+Todas las cargas se invierten y agregan signo.
+
+\subsection*{Momento magnético}
+\begin{align*}
+    \hat{\vec{\mu}}
+        &= \frac{q}{2m}\,\hat{\vec{\sigma}}
+            \quad (\hat{\vec{\sigma}}: \text{operador de spin})        \\
+    \hat{\mu}_{z,i}
+        &= Q_{i}\,\frac{e}{2m_{i}}\,\hat{\sigma}_{3}
+            \qquad i = u, d, s
+\end{align*}
+
+% ── Dirac y Klein-Gordon ──────────────────────────────────────────────────────
+\section*{Dirac y Klein-Gordon}
+
+\begin{align*}
+    (\partial^{\mu}\partial_{\mu} + m^{2})\,\phi
+        &= 0                                                           \\
+    (i\gamma^{\mu}\partial_{\mu} - m)\,\psi
+        &= 0                                                           \\
+    (\vec{k}\cdot\vec{\sigma})^{-1}
+        &= \frac{\vec{k}\cdot\vec{\sigma}}{|\vec{k}|^{2}}             \\
+    \{\gamma^{\mu},\, \gamma^{\nu}\}
+        &= 2\eta^{\mu\nu}                                              \\
+    (\gamma^{\mu})^{\dagger}
+        &= \gamma^{0}\gamma^{\mu}\gamma^{0}                           \\
+    (\gamma^{0})^{\dagger}
+        &= \gamma^{0}                                                  \\
+    (\gamma^{i})^{\dagger}
+        &= -\gamma^{i}
+\end{align*}
+
+\todo[inline]{Agregar las gammas y el operador $p$ (Clase 6)}
+
+\subsection*{Transformaciones de Lorentz}
+\begin{align*}
+    S(\omega)
+        &= e^{-\frac{i}{2}\,\omega_{\alpha\beta}\,\Sigma^{\alpha\beta}} \\
+    \Sigma^{\alpha\beta}
+        &= \frac{1}{4}\!\left[\gamma^{\alpha},\, \gamma^{\beta}\right]
+\end{align*}
+
+\subsection*{Helicidad}
+\begin{align*}
+    h   &= \vec{s}\cdot\hat{p}
+          = \frac{1}{2}\,\frac{\vec{\Sigma}\cdot\vec{p}}{|\vec{p}|}  \\
+    [H,\, h] &= 0
+\end{align*}
+
+\subsection*{Quiralidad}
+\begin{align*}
+    \gamma^{5}
+        &= i\,\gamma^{0}\gamma^{1}\gamma^{2}\gamma^{3}                \\
+    [\gamma^{5},\, S(\Lambda)]
+        &= 0                                                           \\
+    [H,\, \gamma^{5}]
+        &\neq 0                                                        \\
+    \gamma^{5}
+        &\xrightarrow{m\to 0} 2h                                      \\
+    (\gamma^{5})^{\dagger}
+        &= \gamma^{5}                                                  \\
+    (\gamma^{5})^{2}
+        &= 1                                                           \\
+    \{\gamma^{5},\, \gamma^{\mu}\}
+        &= 0                                                           \\
+    \hat{P}_{R}
+        &= \tfrac{1}{2}(1 + \gamma^{5})                               \\
+    \hat{P}_{L}
+        &= \tfrac{1}{2}(1 - \gamma^{5})
+\end{align*}
+
+% ── Lagrangiano ───────────────────────────────────────────────────────────────
+\section*{Lagrangiano}
+
+\begin{align*}
+    \partial_{\mu}\!\left(\frac{\partial\mathcal{L}}
+        {\partial(\partial_{\mu}\phi)}\right)
+        - \frac{\partial\mathcal{L}}{\partial\phi}
+        &= 0                                                           \\
+    \frac{\partial(\partial_{\mu}\phi)}{\partial(\partial_{\nu}\phi)}
+        &= \delta^{\nu}_{\mu}                                          \\
+    \frac{\partial(\partial^{\mu}\phi)}{\partial(\partial_{\nu}\phi)}
+        &= \eta^{\mu\nu}                                               \\
+    \frac{\partial(\partial_{\mu}A_{\nu})}
+         {\partial(\partial_{\alpha}A_{\beta})}
+        &= \delta^{\alpha}_{\mu}\,\delta^{\beta}_{\nu}
+\end{align*}
+
+\subsection*{Teorema de Noether}
+
+Sea $\mathcal{L} = \mathcal{L}(\phi_{1},\dots,\phi_{N}, \partial_{\mu}\phi_{1},\dots,\partial_{\mu}\phi_{N})$. Ante una transformación infinitesimal tal que $\mathcal{L}' = \mathcal{L} + \partial_{\mu}K^{\mu}$:
+
+\begin{equation*}
+    J^{\mu} = \sum_{i}
+        \frac{\partial\mathcal{L}}{\partial(\partial_{\mu}\phi_{i})}
+        \,\Delta\phi_{i} - K^{\mu},
+    \qquad
+    \partial_{\mu}J^{\mu} = 0
+    \;\text{(on-shell)}
+\end{equation*}
+
+\end{multicols}
+\end{document}
