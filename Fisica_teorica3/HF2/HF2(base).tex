@@ -1,0 +1,297 @@
+\documentclass[a4, 12pt]{article}
+\usepackage[margin=.5cm]{geometry}
+\usepackage{amsmath, multicol}
+\raggedcolumns
+
+\usepackage{xcolor, titlesec} % For color management
+
+% Set width of the rule (e.g., 0.4pt or thicker)
+\setlength{\columnseprule}{0.4pt}
+
+% Set the color of the rule to black
+\def\columnseprulecolor{\color{black}}
+
+\titleformat{\section}
+  {\normalfont\Large\bfseries} % Font formatting
+  {\thesection}{1em} % Label and spacing
+  {}[\titlerule] % Draws a line (overline) after the title
+
+%===Borra la identación de forma global===
+\setlength{\parindent}{0pt}
+
+
+% \title{}
+% \author{}
+\date{}
+
+\begin{document}
+% \maketitle
+
+\begin{multicols}{2}
+  \section*{Termodinámica}
+  \subsection*{Entropía}
+    \begin{equation*}
+      \begin{aligned}
+        &S = S(U,V,N) \quad | \quad
+        dS = \frac{1}{T}dU + \frac{P}{T}dV - \frac{\mu}{T}dN\\
+        &dU = TdS - pdV + \mu dN
+        % S = \frac{1}{T}U + \frac{P}{T}V - \frac{\mu}{T}N \text{(Solo sist ext)}
+      \end{aligned}
+    \end{equation*}
+  
+  \subsection*{Energía libre de Hemholtz}
+  \begin{equation*}
+    \begin{aligned}
+    &F = U - TS \quad | \quad
+    dF = -SdT - pdV + \mu dN
+    \end{aligned}
+  \end{equation*}
+  
+  \subsection*{Energía libre de Gibbs}
+  \begin{equation*}
+    \begin{aligned}
+        &G = U - TS + pV \quad | \quad
+        dG = -SdT + vdp + \mu dN
+    \end{aligned}
+  \end{equation*}
+
+  \subsection*{Entalpía}
+  \begin{equation*}
+    \begin{aligned}
+      &H = U + pV \quad | \quad
+      dH = TdS + vdp + \mu dN
+    \end{aligned}
+  \end{equation*}
+
+  \subsection*{Gran canónico}
+  \begin{equation*}
+    \begin{aligned}
+      &\Xi = U -TS - \mu N \quad | \quad
+      d\Xi = -SdT -pdV -Nd\mu
+    \end{aligned}
+  \end{equation*}
+
+  \subsection*{Calor específico}
+  \begin{equation*}
+    C_{V} = \bigg( \frac{\partial E}{\partial T} \bigg)_{V,N} = N\mathcal{C}_V
+  \end{equation*}
+
+  \section*{Ensambles}
+
+    \subsection*{Canónico}
+  
+    \begin{equation*}
+        \begin{aligned}
+          &Z = \sum_{{V,N}} e^{-\beta E_m}
+          = \int \frac{d^{3N}q d^{3N}p}{h^{3N}} e^{-\beta \sum_{j} H(j)}\ \\
+          &F = -kT\log{Z} \\
+          &\langle E \rangle = - \frac{\partial \log{Z}}{\partial \beta} \\
+          &Var(E) = - \frac{\partial \langle E \rangle}{\partial \beta}
+        \end{aligned}
+    \end{equation*}
+
+    \subsection*{Gran canónico}
+      \begin{equation*}
+        \begin{aligned}
+          &\mathcal{Z} = \sum_{{V}} z^{N_m} e^{-\beta E_m} \big/
+          z = e^{\beta \mu} \\
+          &\Xi = -kT\log{\mathcal{Z}} \\
+          &\langle E \rangle = - \frac{\partial \log{\mathcal{Z}}}{\partial \beta} \\
+          &\langle N \rangle = z \frac{\partial \log{\mathcal{Z}}}{\partial z}\\
+        \end{aligned}
+    \end{equation*}
+
+    \section*{Fermiones}
+    \begin{equation*}
+      \begin{aligned}
+        &f_{\nu}(z) = \frac{1}{\Gamma(\nu)} \int \frac{x^{\nu - 1}}{z^{-1}e^{x} + 1} \rightarrow \nu > 0\\
+        &zf'_{\nu}(z) = f_{\nu - 1}(z) \quad | \quad f_{\nu}(z) \text{es creciente}\\
+      \end{aligned}
+    \end{equation*}
+
+    \begin{equation*}
+      \begin{cases}
+        f_{\nu}(z) \approx z \quad;\; z<<1 \\
+        f_{\nu}(z) = \frac{(logz)^{\nu}}{\Gamma(\nu + 1)}[1 + \frac{\pi^2}{6} \frac{\nu(\nu - 1)}{(logz)^2} + \mathcal{O}((logz)^{-4})] \quad;\; z>>1 \\
+        f_{\nu}(z) = \sum_{l = 1}^{\infty} (-1)^{l -1} \frac{z^{l}}{l^{\nu}} \quad ; |z|<1
+      \end{cases}
+    \end{equation*}
+
+    \begin{equation*}
+      f_{\nu = 1}(z) = \log(1 + z)
+    \end{equation*}
+    
+    Longitud de onda generalizada:
+    \begin{equation*}
+      \lambda^{d} = \frac{(\alpha \beta)^{\nu}qh^{d}}{\Gamma(\nu)\Omega_{d}}
+    \end{equation*}
+
+    Magnetización y suceptibilidad:
+
+    \begin{equation*}
+      \begin{aligned}
+        M &= \mu(N_{\uparrow} - N_{\downarrow}) \\
+        \chi &= \frac{1}{N} \bigg(\frac{\partial M}{\partial B}\bigg)_{\beta,N} \bigg|_{B = 0}
+      \end{aligned}
+    \end{equation*}
+
+    Logaritmo de la función de partición gran canónica $\mathcal{Z}$:
+    \begin{equation*}
+      \log{\mathcal{Z}} = \sum_i \log(1 + z e^{-\beta \epsilon_i})
+    \end{equation*}
+
+    La densidad de estados se suele escribir:
+    \begin{equation*}
+      n_{FD} \sim \int_{0}^{\infty}dp \frac{p}{z^{-1}e^{\beta e} + 1} = \int_{0}^{\infty}dp \frac{p}{e^{\beta (e - \mu)} + 1}
+    \end{equation*}
+
+    Para $T \rightarrow 0$:
+    \begin{equation*}
+      n_{FD} \sim \int_{0}^{\infty} dp \;p\; \theta\bigg(\mu(T=0) - \epsilon\bigg) \big/ \mu(T=0)=\epsilon_F
+    \end{equation*}
+
+    \textit{Obs}: utilizar fórmulas útiles para seguir con la integral
+
+    \section*{Bosones}
+    \begin{equation*}
+      \begin{aligned}
+        g_{\nu}(z) = \frac{1}{\Gamma(\nu)} \int_{0}^{+\infty} dx \frac{x^{\nu - 1}}{z^{-1}e^{x} - 1} \\
+        g_{\nu}^{,}(z) = \frac{g_{\nu - 1}(z)}{z} \quad | \quad g_{\nu}(z) \text{Es creciente}
+      \end{aligned}
+    \end{equation*}
+
+    \begin{equation*}
+      \begin{cases}
+        g_{\nu}(z) \approx z \quad,z <<1\\
+        g_{\nu}(z=1) = \zeta(\nu) \quad \nu > 1 \\
+        g_{\nu}(z\rightarrow 1) = +\infty  \quad \nu \leq 1 \\
+        g_{\nu} = \sum_{k=1}^{\infty}\frac{z^k}{k^{\nu}} \quad |z|<1
+      \end{cases}
+    \end{equation*}
+
+    Logaritmo de la función de partición gran canónica $\mathcal{Z}$:
+    \begin{equation*}
+      \log{\mathcal{Z}} = -\sum_i \log(1 - z e^{-\beta \epsilon_i}) \big/ z < e^{-\beta \epsilon_{fund}}
+    \end{equation*}
+
+    \section*{Ising}
+    Función de correlación:
+    \begin{equation*}
+      G(i, i + j) = \langle s_i s_{i+j} \rangle - \langle s_i \rangle\langle s_{j+1}\rangle
+    \end{equation*}
+
+    \textbf{Si no hay campo:} $\langle s_i \rangle = 0$
+
+    Las matrices centrosimétricas conmutan con:
+
+    \begin{equation*}
+      J = \begin{pmatrix}
+        0 & 0 & 0 & 1 \\
+        0 & 0 & 1 & 0 \\
+        0 & 1 & 0 & 0 \\
+        1 & 0 & 0 & 0 \\
+      \end{pmatrix} \quad
+      U = \frac{1}{\sqrt{2}} \begin{pmatrix}
+        1 & 0 & 1 & 0 \\
+        0 & 1 & 0 & 1 \\
+        0 & 1 & 0 & -1 \\
+        1 & 0 & -1 & 0 \\
+      \end{pmatrix}
+    \end{equation*}
+
+    De esta forma:
+    
+    \begin{equation*}
+      U^{\mathcal{T}}q\;\;U = \begin{pmatrix} q^{+} & 0 \\ 0 & q^{-}\end{pmatrix}
+    \end{equation*}
+
+    \textbf{Teorema de Perron-Frobenius:}
+	  Dada una matriz \textit{q} que posee elementos positivos, el teorema garantiza que existe un autovalor $\lambda_{max}$ no degenerado y positivo tal que su módulo es mayor que el de cualquier otro autovalor en todo su dominio.
+    
+    \section*{Fórmulas útiles}
+    Propiedades hiper-trigonométricas:
+    \begin{equation*}
+      \begin{aligned}
+      &\sinh{x} = \frac{e^{x} - e^{-x}}{2}\\
+      &\cosh{x} = \frac{e^{x} + e^{-x}}{2}\\
+      &\cosh(x + y) = \cosh{x}\cosh{y} + \sinh{x}\sinh{y} \\
+      &\sinh(x + y) = \sinh{x}\cosh{y} + \cosh{x}\sinh{y} \\
+      &\cosh^{2}{x} - \sinh^{2}{x} = 1
+      \end{aligned}
+    \end{equation*}
+
+    Límite de integrales:
+    \begin{equation*}
+      \int_{0}^{\infty}dx f(x) \theta(x_0 - x) = \theta(x_0)\int_0^\infty dxf(x)
+    \end{equation*}
+
+    Función $\Gamma(x)$:
+    \begin{equation*}
+      \Gamma(x) = \int_{0}^{\infty}t^{x-1}e^{-t}dt
+    \end{equation*}
+
+    Propiedades útiles de la $\Gamma$:
+    \begin{equation*}
+      \begin{aligned}
+        &\Gamma(n + 1) = n\Gamma(n) \\
+        &\Gamma(1) = 1 \quad \wedge \quad \Gamma\bigg(\frac12\bigg) = \sqrt{\pi}
+      \end{aligned}
+    \end{equation*}
+
+    Integral gaussiana:
+    \begin{equation*}
+      \int_{-\infty}^{\infty} dxe^{-ax^2} = \sqrt{\frac{\pi}{a}} \quad \text{o} \quad \int_{0}^{\infty} dxe^{-ax^2} = \frac12\sqrt{\frac{\pi}{a}}
+    \end{equation*}
+
+    Suma a integral semiclásica (N:\textit{nro de partículas}):
+
+    \begin{equation*}
+      \sum_{\epsilon}f(E_{\epsilon}) = \int \frac{d^{3N}q \;\; d^{3N}p}{h^{3N}}f(H(\vec{q}, \vec{p}))
+    \end{equation*}
+
+    Coordenadas hiperesféricas:
+    \begin{equation*}
+      \begin{cases} 
+      d^{N}q = q^{N - 1} d\Omega_{N}dq\\
+      \Omega_N = \frac{2\pi^{\frac{N}{2}}}{\Gamma(\frac{N}{2})}
+      \end{cases}
+    \end{equation*}
+
+    Serie del logaritmo:
+    \begin{equation*}
+      \log(1 \mp x) = \mp \sum_{l = 1}^{+\infty} (\pm)^{l+1} \frac{x^l}{l}
+    \end{equation*}
+    
+    Desarrollos de $g_{\nu}$ que aparecieron en la guia:
+
+    Para $\nu$ no entero:
+    \begin{equation*}
+      g_{\nu}(e^{-\alpha}) = \frac{\Gamma(1-\nu)}{\alpha^{1-\nu}} + \sum_{k=0}^{\infty}\frac{(-1)^k}{k!}\zeta(\nu - k) \alpha^{k}
+    \end{equation*}
+
+    Para $\nu$ entero positivo:
+
+    \begin{equation*}
+      \begin{aligned}
+        g_{\nu}(e^{-\alpha}) = \frac{(-1)^{\nu-1}}{(\nu - 1)!}\bigg(\sum_{k=1}^{\nu-1}\frac{1}{k} - \log\alpha\bigg)\alpha^{\nu-1} + \\
+        + \sum_{\substack{k=0  \\ k \neq \nu-1}}^{\infty}\frac{(-1)^k}{k!}\zeta(\nu - k) \alpha^{k}
+      \end{aligned}
+    \end{equation*}
+
+    Expansión multimodal:
+    \begin{equation*}
+      \begin{aligned}
+        &\bigg(\sum_{i=1}^{n}a_{i}\bigg)^{j} = \sum_{j_{1},...,j_{n}}' \binom{j}{j_{1},...,j_{n}} \prod_{i=1}^{n}a_{i}^{j_{i}} \\
+        &\binom{j}{j_{1},...,j_{n}} = \frac{j!}{j_{1}!\;...\;j_{n}!}
+      \end{aligned}
+    \end{equation*}
+
+    Ley de curie $(T\rightarrow+\infty \quad y \quad z << 1)$:
+    \begin{equation*}
+      \chi = \beta \mu_0^2 = \frac{\mu_0^2}{kT}
+    \end{equation*}
+
+\end{multicols}
+
+
+\end{document}

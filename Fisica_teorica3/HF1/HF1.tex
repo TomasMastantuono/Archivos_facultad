@@ -1,0 +1,182 @@
+\documentclass{article}
+
+\usepackage[a4paper, margin=1.5cm]{geometry}
+\usepackage{multicol}
+\usepackage{amsmath}
+\raggedcolumns
+
+\begin{document}
+
+\section*{Termodinámica}
+\subsection{Entropía}
+
+\begin{multicols}{2}
+$
+\begin{aligned}
+    &S = S(U,V,N)\\
+    &dS = \frac{1}{T}dU + \frac{P}{T}dV - \frac{\mu}{T}dN\\
+    &dU = TdS - pdV + \mu dN \\
+    &S = \frac{1}{T}U + \frac{P}{T}V - \frac{\mu}{T}N \text{(Solo sist ext)}
+\end{aligned}
+$
+
+\subsection{Energía de Hemholtz}
+$
+\begin{aligned}
+    &F = U - TS \\
+    &dF = -SdT - pdV + \mu dN
+\end{aligned}
+$
+
+\subsection{Energía de Gibbs}
+$
+\begin{aligned}
+    &G = U - TS + pV \\
+    &dG = -SdT + vdp + \mu dN
+\end{aligned}
+$
+
+\subsection{Hentalpía}
+$
+\begin{aligned}
+    &H = U + pV \\
+    &dH = TdS + vdp + \mu dN
+\end{aligned}
+$
+
+\subsection{Gran Canónico}
+$
+\begin{aligned}
+    &\Xi = U -TS - \mu N \\
+    &d\Xi = -SdT -pdV -Nd\mu
+\end{aligned}
+$
+
+\section*{Ecuaciones de Maxwell y Cv}
+$
+\begin{aligned}
+    +\bigg(\frac{\partial T}{\partial V}\bigg)_S &= -\bigg(\frac{\partial p}{\partial S}\bigg)_V = \frac{\partial^2 U}{\partial S \partial V} \\
+    +\bigg(\frac{\partial T}{\partial p}\bigg)_S &= +\bigg(\frac{\partial V}{\partial S}\bigg)_p = \frac{\partial^2 H}{\partial S \partial p} \\
+    +\bigg(\frac{\partial S}{\partial V}\bigg)_T &= +\bigg(\frac{\partial p}{\partial T}\bigg)_V = \frac{\partial^2 F}{\partial T \partial V} \\
+    -\bigg(\frac{\partial S}{\partial p}\bigg)_T &= +\bigg(\frac{\partial V}{\partial T}\bigg)_p = \frac{\partial^2 G}{\partial T \partial p} \\
+    C_V &= T \bigg(\frac{\partial S}{\partial T}\bigg)_V
+\end{aligned}
+$
+
+\section*{Combinatoria}
+\subsection{Stirling}
+$
+\begin{aligned}
+    &\log{N!} \approx N\log{N} - N \\
+    &\log\begin{pmatrix} N \\ xN \end{pmatrix} \approx -N \bigg[x\log{x} + (1 - x)\log({1 - x})\bigg]
+\end{aligned}
+$
+
+\subsection{Inclusión - Exclusión}
+Suele servir cuando quiero imponer condiciones restrictivas
+
+$
+\begin{aligned}
+    P(n, m) =& \sum_{i = 1}^{m}N(A_i) - \sum_{i, j}\;^{'} N(A_i \cap A_j) + \\
+    &\sum_{i, j, }\;^{'} N(A_i \cap A_j \cap A_k) - ...
+\end{aligned}
+$
+
+\subsection{Bayes}
+\begin{equation*}
+    P(A \cap B) = P(A | B)P(B) = P(B|A)P(A)
+\end{equation*}
+
+De estas se deduce:
+
+\begin{equation*}
+    P(A | B) = \frac{P(B | A)P(A)}{P(B)}
+\end{equation*}
+
+\subsection{Aprox término máximo}
+$
+\begin{aligned}
+    &\lim_{N \to \inf} \frac{1}{N} \log{Z} = g(x^*) \rightarrow \log{\sigma} \approx Ng(x) + o(N)
+\end{aligned}
+$
+
+\section*{Ensambles}
+
+\subsection{Canónico}
+Fijos: {V, N}
+
+$
+\begin{aligned}
+    Z &= \sum_{{V,N}} e^{-\beta E_m} \\
+    &= \sum_{E} \Omega(E) e^{-\beta E} \\
+    &= \int \frac{d^{3N}q d^{3N}p}{h^{3N}} e^{-\beta \sum_{j} H(j)}\ \\
+\end{aligned}
+$
+
+$
+\begin{aligned}
+    &F = -kT\log{Z} \\
+    &\langle E \rangle = - \frac{\partial \log{Z}}{\partial \beta} \\
+    &Var(E) = - \frac{\partial \langle E \rangle}{\partial \beta}\\
+    &S \approx k\log \sigma(n) - y\log x
+\end{aligned}
+$
+
+\subsection{Gran canónico}
+$
+\begin{aligned}
+    &\mathcal{Z} = \sum_{{V}} z^{N_m} e^{-\beta E_m} \\
+    &z = e^{\beta \mu} \\
+    &\Xi = -kT\log{\mathcal{Z}} \\
+    &\langle E \rangle = - \frac{\partial \log{\mathcal{Z}}}{\partial \beta} \\
+    &\langle N \rangle = z \frac{\partial \log{\mathcal{Z}}}{\partial z}\\
+\end{aligned}
+$
+
+\section*{Gas ideal}
+Recordar el factor de corrección de Boltzman!
+
+$
+\begin{aligned}
+    &S = kN \bigg[\log{\bigg(\frac{V}{N \lambda^3}\bigg)} + \frac{5}{2}\bigg] \rightarrow \lambda = \frac{h}{\sqrt{2\pi m kT}} \\
+    &E = \frac{3}{2}NkT \\
+    &pV = NkT \\
+    &Z = (Z_1)^{3N} \\
+    &Z_1 = \frac{V}{\lambda^3} \\
+    &\mathcal{Z} = e^{Z_1 z} \\
+    &z = p\beta \lambda^3 \\
+    &\langle N \rangle = z Z_1 = \frac{zV}{\lambda^3}
+\end{aligned}
+$
+
+\section*{Utilidades}
+\subsection{Cosas de combinatoria}
+$
+\begin{aligned}
+    &\begin{pmatrix} N \\ m \end{pmatrix} = \begin{pmatrix} N - 1 \\ m \end{pmatrix} + \begin{pmatrix} N - 1 \\ m - 1 \end{pmatrix} \\
+    &\sum_{i=1}^{N}i = \frac{n(n + 1)}{2} \\
+    &\sum_{i = 0}^{n}r^i = \frac{1- r^{n + 1}}{1 - r} \\
+    &\sum_{k=0}^\infty a r^k = \frac{a}{1-r} \quad \quad |r|<1 \\
+    &(a+b)^n= \sum_{k=0}^n \binom{n}{k} a^{n - k} b^{k} \\
+    &(a-b)^n = \sum_{k=0}^n (-1)^k \binom{n}{k} a^{n - k} b^{k}
+\end{aligned}
+$
+
+\subsection*{Hiper-cosas}
+
+\begin{align*}
+    \text{Hiper-esfera:}\qquad
+    &V_D(R)=\frac{\pi^{D/2}R^D}{\big(D/2\big)!}
+    \\[1em]
+    \text{Hiper-pirámide:}\qquad
+    &V_n=\frac{1}{n}A_{n-1}h
+    \\[1em]
+    \text{Hiper-elipsoide:}\qquad
+    &V_n=\frac{\pi^{n/2}}
+    {\Gamma\big(\frac{n}{2}+1\big)}
+    \prod_{i=1}^{n} a_i
+\end{align*}
+
+\end{multicols}
+
+\end{document}
